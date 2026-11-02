@@ -214,6 +214,11 @@
   .tag{ font-family:'JetBrains Mono'; font-size:10.5px; color:var(--text-dim); border:1px solid var(--border-hi); border-radius:4px; padding:4px 9px; }
   .proj-link{ font-family:'JetBrains Mono'; font-size:12px; color:var(--text); display:inline-flex; align-items:center; gap:6px; margin-top:auto; border-top:1px solid var(--border); padding-top:16px; }
   .proj-link:hover{ color:var(--accent); }
+  .proj-card.wide{ grid-column:1 / -1; }
+  .proj-links{ display:flex; flex-wrap:wrap; gap:8px 22px; margin-top:auto; border-top:1px solid var(--border); padding-top:16px; }
+  .proj-links .proj-link{ margin-top:0; border-top:0; padding-top:0; }
+  .proj-live{ display:inline-flex; align-items:center; gap:7px; }
+  .proj-live::before{ content:''; width:7px; height:7px; border-radius:50%; background:#3fb950; box-shadow:0 0 0 3px rgba(63,185,80,0.18); }
 
   /* SKILLS */
   .stack-layers{ position:relative; display:flex; flex-direction:column; gap:16px; padding-left:8px; }
@@ -643,6 +648,24 @@
 
     <div class="proj-group-label reveal indep">Independent Projects</div>
     <div class="proj-grid">
+      <div class="proj-card wide reveal">
+        <div class="proj-head">
+          <div class="proj-kicker proj-live">Independent · GIS &amp; AI · Live</div>
+          <h3>Capacity Atlas</h3>
+        </div>
+        <div class="proj-body">
+        <p>A public map of where New York's power lines can take new solar. Every Monday a pipeline downloads the hosting capacity data two utilities publish, runs 14 data quality checks, compares the week with the one before, and publishes everything as one vector tile map. Volta, an assistant built on the Claude API, turns questions like "Where near Albany can I connect 2 MW?" into map settings, and every number it shows is counted from the data, not written by the AI.</p>
+        <div class="proj-impact">758,915 line sections from two utilities on one map, refreshed every week. The checks found 30,143 Central Hudson sections with an analysis over six months old and new solar connected since.</div>
+        <div class="tag-row">
+          <span class="tag">Python</span><span class="tag">GeoPandas</span><span class="tag">GitHub Actions</span><span class="tag">PMTiles</span><span class="tag">MapLibre GL</span><span class="tag">Cloudflare</span><span class="tag">Claude API</span>
+        </div>
+        <div class="proj-links">
+          <a class="proj-link" href="https://capacity-atlas.pages.dev" target="_blank" rel="noopener">↗ Open the live map</a>
+          <a class="proj-link" href="https://github.com/SRINIVASRAVIKANTH/capacity-atlas" target="_blank" rel="noopener">↗ github.com/SRINIVASRAVIKANTH/capacity-atlas</a>
+        </div>
+        </div>
+      </div>
+
       <div class="proj-card reveal">
         <div class="proj-head">
           <div class="proj-kicker">Independent · Agent Infrastructure</div>
@@ -669,7 +692,7 @@
         <div class="tag-row">
           <span class="tag">Python</span><span class="tag">Claude API</span><span class="tag">Rules Engine</span><span class="tag">Streamlit</span>
         </div>
-        <a class="proj-link" href="https://github.com/SRINIVASRAVIKANTH" target="_blank" rel="noopener">↗ github.com/SRINIVASRAVIKANTH</a>
+        <a class="proj-link" href="https://github.com/SRINIVASRAVIKANTH/agent-guardrail" target="_blank" rel="noopener">↗ github.com/SRINIVASRAVIKANTH/agent-guardrail</a>
         </div>
       </div>
     </div>
@@ -712,6 +735,7 @@
             <span class="chip">Spatial Analyst</span><span class="chip">Least Cost Path Analysis</span>
             <span class="chip">FME Automation</span><span class="chip">PostGIS</span><span class="chip">SDE Geodatabase</span>
             <span class="chip">ArcGIS API for Python</span><span class="chip">LiDAR / LAS Processing</span>
+            <span class="chip">GeoPandas / Shapely</span><span class="chip">MapLibre GL</span><span class="chip">Vector Tiles (PMTiles, tippecanoe)</span>
           </div>
         </div>
       </div>
